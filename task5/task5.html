@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<script>
+    'use strict';
+
+    /*
+    5*. Пользователь, с помощью команды prompt, вводит номер билета - 6 цифр.
+    Программа определяет является ли счастливым данный билетик
+    и выводит соответстующее сообщение в консоль.
+    Счастливый билет - билет, у которого сумма первых трех цифр
+    равна сумме последних трех цифр номера билета.
+    Для выполнения задания необходимо использовать оператор % и ветвление.
+    Чтобы сравнить два значения, можно использовать if и else
+    (курс основ программирования), например:
+    const a = 1;
+    const b = 1;
+    if (a === b) {
+    console.log('Две переменные a и b равны.');
+    }
+    */
+
+    let ticketNumber = +prompt('Введите 6 цифр билета:'),
+        leftNumber = parseInt(ticketNumber / 1000),
+        rightNumber = ticketNumber % 1000,
+
+        leftSum = parseInt(leftNumber / 100) +
+        parseInt(leftNumber / 10) % 10 +
+        leftNumber % 10,
+
+        rightSum = parseInt(rightNumber / 100) +
+        parseInt(rightNumber / 10) % 10 +
+        rightNumber % 10;
+
+    if (leftSum === rightSum) {
+        alert('Билет счастливый!');
+    } else {
+        alert('Билет несчастливый!');
+    }
+
+</script>
