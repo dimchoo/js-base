@@ -1,0 +1,87 @@
+<meta charset="UTF-8">
+<script>
+    'use strict';
+
+    /*
+    5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+    где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+    переданного значения операции (использовать switch) выполнить одну из арифметических операций
+    (использовать функции из задания 4) и вернуть полученное значение.
+    */
+
+
+    // Функции из 4 задания:
+
+    /**
+     * Функция складывает 2 переданных числа.
+     * @param {number} num1 Первый операнд.
+     * @param {number} num2 Второй операнд.
+     * @returns {number} Возвращает сумму переданных чисел.
+     */
+    function addNumbers(num1, num2) {
+        return num1 + num2;
+    }
+
+    /**
+     * Функция вычитает 2 переданных числа.
+     * @param {number} num1 Первый операнд.
+     * @param {number} num2 Второй операнд.
+     * @returns {number} Возвращает разность переданных чисел.
+     */
+    function reduceNumbers(num1, num2) {
+        return num1 - num2;
+    }
+
+    /**
+     * Функция делит 2 переданных числа.
+     * @param {number} num1 Первый операнд.
+     * @param {number} num2 Второй операнд.
+     * @returns {number} Возвращает отношение переданных чисел.
+     */
+    function divideNumbers(num1, num2) {
+        return num1 / num2;
+    }
+
+    /**
+     * Функция умножает 2 переданных числа.
+     * @param {number} num1 Первый операнд.
+     * @param {number} num2 Второй операнд.
+     * @returns {number} Возвращает произведение переданных чисел.
+     */
+    function multiplyNumbers(num1, num2) {
+        return num1 * num2;
+    }
+
+
+    // Реализация функции с помощью switch:
+
+    /**
+     * Функция производит арефметические операции,
+     * в зависимости от переданного 3-го аргумента.
+     * @param {number} arg1 Первый операнд.
+     * @param {number} arg2 Второй операнд
+     * @param {string} operation Арефметический оператор
+     * @returns {number | string} Возвращает результат арефметической операции или строку с ошибкой.
+     */
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case '+':
+                return addNumbers(arg1, arg2);
+            case '-':
+                return reduceNumbers(arg1, arg2);
+            case '*':
+                return multiplyNumbers(arg1, arg2);
+            case '/':
+                return divideNumbers(arg1, arg2);
+            default:
+                return 'Неизвестная операция!';
+        }
+    }
+
+    console.log(mathOperation(8, 4, '+'));
+    console.log(mathOperation(8, 4, '-'));
+    console.log(mathOperation(8, 4, '*'));
+    console.log(mathOperation(8, 4, '/'));
+    console.log(mathOperation(8, 4, 'abracadabra'));
+
+</script>
